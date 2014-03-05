@@ -1,0 +1,72 @@
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+Released absolutely free to use anywhere, all I ask is that you kindly leave the link back at the bottom.
+
+Name       : A Subtle Beige
+Description: Two column (w/ one micro column for links)
+Version    : 1.0
+Released   : 20081008
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>RPG CHARACTERS</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/asubtlebeige.css') }}" />
+<style type="text/css">
+<!--
+body {
+	background-color: #000000;
+}
+-->
+</style></head>
+<body>
+<div id="page"> 
+    <div id="header">
+    	<div class="title">RPG CHARACTERS</div>
+        
+    </div>
+    <div id="bar">
+      <div class="menuLink"><a href="/">Home</a></div>
+      <div class="menuLink"><a href="/about">About</a></div>
+      <div class="menuLink"><a href="/page">A Page</a></div>
+      <div class="menuLink"><a href="/something">Something</a></div>
+      <div class="menuLink"><a href="/team">Team</a></div>
+    </div>
+    <div id="pageContent">
+    
+    <div class="articleTitle">RPG CHARACTERS</div>
+        
+        
+      <div class="articleContent">
+      
+      <div class="rightLinks">
+            <div class="linkTitle">Links:</div>
+    			<p class="links">
+                <a href="http://www.bryantsmith.com">Web Design</a><br />
+                <a href="http://www.bryantsmith.com">Templates</a><br />
+                <a href="http://www.bryantsmith.com">Marketing</a><br />
+                <a href="http://www.bryantsmith.com">SEO</a><br />
+                <a href="http://www.bryantsmith.com">Programming</a><br />
+                <a href="http://www.bryantsmith.com">Consulting</a><br />
+				</p>
+        </div>
+        
+      </div>
+
+
+    </div>
+  
+    <div id="content">
+         {%block content %}{% endblock %}
+      </div>
+
+</div>
+    <div id="footer"><a href="http://www.aszx.net">web development</a>
+      by <a href="http://www.bryantsmith.com">bryant smith</a></div>
+        
+</body>
+</html>
