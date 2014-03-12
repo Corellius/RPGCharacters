@@ -7,9 +7,9 @@ app = Flask(__name__)
 def mainIndex():
     return render_template('index.html', selectedMenu='Home')
 
-@app.route('/about')
+@app.route('/starwars')
 def anotherPage():
-    return render_template('about.html', selectedMenu='About')
+    return render_template('starwars.html', selectedMenu='Star Wars')
   
 @app.route('/team')
 def contact():
