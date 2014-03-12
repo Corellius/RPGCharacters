@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-#import utils, MySQLdb
+import utils, MySQLdb
 
 app = Flask(__name__)
 
@@ -8,8 +8,15 @@ def mainIndex():
     return render_template('index.html', selectedMenu='Home')
 
 @app.route('/starwars')
-def anotherPage():
-    return render_template('starwars.html', selectedMenu='Star Wars')
+def starWars():
+  db = utils.db_connect()
+  cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+  query = 'SELECT * from Star_Wars'
+  cur.execute(query)
+  rows = cur.fetchall()
+  return render_template('starwars.html', Star_Wars=rows, selectedMenu='Star Wars')
+
+
   
 @app.route('/team')
 def contact():

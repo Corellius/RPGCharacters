@@ -1,6 +1,8 @@
 DROP DATABASE rpgChar;
 
 CREATE DATABASE IF NOT EXISTS rpgChar;
+GRANT ALL PRIVILEGES ON rpgChar.* to 'user'@'localhost' 
+identified by 'password';
 USE rpgChar;
 
 DROP TABLE Star_Wars, DnD_3.5, Character_Templates;
