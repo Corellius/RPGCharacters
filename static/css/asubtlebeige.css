@@ -3,12 +3,13 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #333333 url(images/img01.gif) repeat-x;
+  background-color:#252F33;
+  background-image:url("img/sagaedition.png");
+  background-repeat:repeat-x;
 	text-align: justify;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	color: #666666;
-	background-color:#252F33;
 }
 *
 {
@@ -44,7 +45,7 @@ ul li
   height: 100%;  
   position: relative; 
   overflow: hidden; 
-  background: #252F33 url(img/background.png) repeat-y;
+  background: #252F33 url(img/star_wars_se.jpg) repeat-y;
   width: 730px;
 }
 
