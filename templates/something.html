@@ -1,11 +1,15 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Character Templates</h1>
-<div id="header">
-    	<div class="title">RPG CHARACTERS</div>
-        
-    </div>
+<h1>Force Powers</h1>
+<table>
+  <tr><th>ID</th><th>Name</th><th>Action Required</th><th>Target</th><th>Alignment</th><th>Description</th><th>Example</th></tr>
+  {% for entry in Force_Powers %}
+  <tr><td>{{entry['ID']}}</td><td>{{entry['Name']}}</td><td>{{entry['Action']}}</td><td>{{entry['Target']}}</td><td>{{entry['Alignment']}}</td>
+  <td>{{entry['Description']}}</td><td><a href="{{entry['Example_Link']}}">{{entry['Example_Link']}}</a></td></tr>
+  {% endfor %}
+</table>
+
 <p>
  
       <img src="{{ url_for('static', filename='img/background.png') }}" />					

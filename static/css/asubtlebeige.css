@@ -5,7 +5,7 @@ body {
 	padding: 0;
   background-color:#252F33;
   background-image:url("img/sagaedition.png");
-  background-repeat:repeat-x;
+  background-repeat:repeat;
 	text-align: justify;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 13px;
@@ -16,6 +16,11 @@ body {
   margin: 0 auto 0 auto;
  text-align:left;}
 
+a:active 
+{ outline: none;
+  text-decoration: none;
+  color: #666666;
+}
 a, a:hover
 { outline: none;
   text-decoration: underline;
@@ -194,7 +199,7 @@ color:#2B000D;
 a
 {
 text-decoration:none;
-color:#252F33;
+color:lightblue;
 }
 
 #pageContent

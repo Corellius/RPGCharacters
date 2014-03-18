@@ -24,8 +24,13 @@ def contact():
     return render_template('team.html', selectedMenu='Team')
   
 @app.route('/something')
-def example():
-    return render_template('something.html', selectedMenu='Something')
+def forcePowers():
+  db = utils.db_connect()
+  cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+  query = 'SELECT * from Force_Powers'
+  cur.execute(query)
+  rows = cur.fetchall()
+  return render_template('something.html', Force_Powers=rows, selectedMenu='Force Powers')
   
 @app.route('/page')
 def page():
