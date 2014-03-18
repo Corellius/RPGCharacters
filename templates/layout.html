@@ -37,21 +37,21 @@ body {
       <div class="menuLink"><a href="/team">Team</a></div>
     </div>
     <div id="pageContent">
-    
-    <div class="articleTitle">RPG CHARACTERS</div>
-            
       <div class="articleContent">
       
       <div class="sidebar">
-            <div class="linkTitle">Links:</div>
-    			<p class="links">
-                <a href="http://www.bryantsmith.com">Web Design</a><br />
-                <a href="http://www.bryantsmith.com">Templates</a><br />
-                <a href="http://www.bryantsmith.com">Marketing</a><br />
-                <a href="http://www.bryantsmith.com">SEO</a><br />
-                <a href="http://www.bryantsmith.com">Programming</a><br />
-                <a href="http://www.bryantsmith.com">Consulting</a><br />
-				</p>
+        <h2>Links</h2>
+        <ul>
+          <li><a href="http://www.starwarsrpgindex.com/">Star Wars RPG Index</a></li>
+          <li><a href="http://www.d20srd.org/">DnD 3.5 Hypertext Index</a></li>
+        </ul>
+        <h2>Search</h2>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter keywords....." />
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="{{ url_for('static', filename='img/search.png') }}" alt="Search" title="Search" />
+          </p>
+        </form>
         </div>
         
       </div>
