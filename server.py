@@ -1,7 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, session
 import utils, MySQLdb
 
 app = Flask(__name__)
+app.secret_key = 'Zq4oA4Dqq3'
 
 @app.route('/')
 def mainIndex():

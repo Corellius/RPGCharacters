@@ -55,3 +55,4 @@ INSERT INTO Star_Wars VALUES (NULL, 'Clone Trooper', 'Human', 2, 'Soldier', 12, 
 INSERT INTO Star_Wars VALUES (NULL, 'Curuni', 'Twilek', 4, 'Scoundrel', 10, 18, 11, 15, 11, 14, 36, 21, 16, 15, '+3', 'Blaster Pistol', 'Blaster Pistol', '+7', '3d6+2');
 INSERT INTO Star_Wars VALUES (NULL, 'Neeldo', 'Rodian', 3, 'Scout', 13, 15, 12, 8, 14, 10, 38, 19, 17, 15, '+2', 'Blaster Rifle', 'Blaster Pistol', '+2', '3d8+1');
 INSERT INTO Star_Wars VALUES (NULL, 'Llleland', 'Wookie', 6, 'Scoundrel', 20, 14, 20, 17, 8, 6, 67, 19, 22, 16, '+4', 'Vibroaxe', 'Bowcaster', '+9', '2d10+12');
+INSERT INTO Star_Wars VALUES (NULL, 'Mandalorian Hunter', 1, 'Soldier', 13, 12, 11, 8, 10, 9, 30, 17, 15, 11, '+1', 'Flamethrower', 'Blaster Pistol', '+2', '3d6');
