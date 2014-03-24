@@ -5,11 +5,11 @@ GRANT ALL PRIVILEGES ON rpgChar.* to 'user'@'localhost'
 identified by 'password';
 USE rpgChar;
 
-DROP TABLE Star_Wars, Force_Powers, Species, Soldier, Jedi, Scout, Scoundrel, Noble;
+DROP TABLE Star_Wars, Force_Powers, Appearance, Ability_Scores, Class_Levels;
 CREATE TABLE Star_Wars
 (
   ID INT(3) AUTO_INCREMENT,
-  Name VARCHAR(30)
+  Name VARCHAR(30),
   PRIMARY KEY (ID)
 );
 
@@ -25,54 +25,26 @@ CREATE TABLE Appearance
 CREATE TABLE Ability_Scores
 (
   ID INT(3) AUTO_INCREMENT,
-  Strength INT(2),
-  Dexterity INT(2),
-  Constitution INT(2),
-  Intelligence INT(2),
-  Wisdom INT(2),
-  Charisma INT(2),
+  Str INT(2),
+  Dex INT(2),
+  Con INT(2),
+  Intl INT(2),
+  Wis INT(2),
+  Cha INT(2),
   PRIMARY KEY(ID),
   FOREIGN KEY(ID) REFERENCES Star_Wars(ID)
 );
 
-CREATE TABLE Soldier
+CREATE TABLE Class_Levels
 (
   ID INT(3) AUTO_INCREMENT,
-  Level INT(2),
+  Soldier INT(2),
+  Jedi INT(2),
+  Scoundrel INT(2),
+  Scout INT(2),
+  Noble INT(2),
   PRIMARY KEY (ID),
-  FOREIGN KEY (ID) REFERENCES Star_Wars(ID);
-);
-
-CREATE TABLE Jedi
-(
-  ID INT(3) AUTO_INCREMENT,
-  Level INT(2),
-  PRIMARY KEY (ID),
-  FOREIGN KEY (ID) REFERENCES Star_Wars(ID);
-);
-
-CREATE TABLE Scout
-(
-  ID INT(3) AUTO_INCREMENT,
-  Level INT(2),
-  PRIMARY KEY (ID),
-  FOREIGN KEY (ID) REFERENCES Star_Wars(ID);
-);
-
-CREATE TABLE Scoundrel
-(
-  ID INT(3) AUTO_INCREMENT,
-  Level INT(2),
-  PRIMARY KEY (ID),
-  FOREIGN KEY (ID) REFERENCES Star_Wars(ID);
-);
-
-CREATE TABLE Noble
-(
-  ID INT(3) AUTO_INCREMENT,
-  Level INT(2),
-  PRIMARY KEY (ID),
-  FOREIGN KEY (ID) REFERENCES Star_Wars(ID);
+  FOREIGN KEY (ID) REFERENCES Star_Wars(ID)
 );
 
 CREATE TABLE Force_Powers
@@ -126,70 +98,18 @@ INSERT INTO Ability_Scores VALUES (10, 20, 14, 20, 17, 8, 6);
 INSERT INTO Ability_Scores VALUES (11, 13, 12, 11, 8, 10, 9);
 INSERT INTO Ability_Scores VALUES (12, 11, 16, 9, 18, 14, 16);
 
-INSERT INTO Soldier VALUES (1, 0);
-INSERT INTO Soldier VALUES (2, 0);
-INSERT INTO Soldier VALUES (3, 0);
-INSERT INTO Soldier VALUES (4, 3);
-INSERT INTO Soldier VALUES (5, 6);
-INSERT INTO Soldier VALUES (6, 1);
-INSERT INTO Soldier VALUES (7, 2);
-INSERT INTO Soldier VALUES (8, 0);
-INSERT INTO Soldier VALUES (9, 0);
-INSERT INTO Soldier VALUES (10, 0);
-INSERT INTO Soldier VALUES (11, 1);
-INSERT INTO Soldier VALUES (12, 0);
-
-INSERT INTO Jedi VALUES (1, 6);
-INSERT INTO Jedi VALUES (2, 0);
-INSERT INTO Jedi VALUES (3, 0);
-INSERT INTO Jedi VALUES (4, 0);
-INSERT INTO Jedi VALUES (5, 0);
-INSERT INTO Jedi VALUES (6, 0);
-INSERT INTO Jedi VALUES (7, 0);
-INSERT INTO Jedi VALUES (8, 0);
-INSERT INTO Jedi VALUES (9, 0);
-INSERT INTO Jedi VALUES (10, 0);
-INSERT INTO Jedi VALUES (11, 0);
-INSERT INTO Jedi VALUES (12, 1);
-
-INSERT INTO Scout VALUES (1, 0);
-INSERT INTO Scout VALUES (2, 0);
-INSERT INTO Scout VALUES (3, 0);
-INSERT INTO Scout VALUES (4, 3);
-INSERT INTO Scout VALUES (5, 0);
-INSERT INTO Scout VALUES (6, 0);
-INSERT INTO Scout VALUES (7, 0);
-INSERT INTO Scout VALUES (8, 0);
-INSERT INTO Scout VALUES (9, 3);
-INSERT INTO Scout VALUES (10, 3);
-INSERT INTO Scout VALUES (11, 0);
-INSERT INTO Scout VALUES (12, 1);
-
-INSERT INTO Scoundrel VALUES (1, 0);
-INSERT INTO Scoundrel VALUES (2, 0);
-INSERT INTO Scoundrel VALUES (3, 6);
-INSERT INTO Scoundrel VALUES (4, 0);
-INSERT INTO Scoundrel VALUES (5, 0);
-INSERT INTO Scoundrel VALUES (6, 0);
-INSERT INTO Scoundrel VALUES (7, 0);
-INSERT INTO Scoundrel VALUES (8, 4);
-INSERT INTO Scoundrel VALUES (9, 0);
-INSERT INTO Scoundrel VALUES (10, 3);
-INSERT INTO Scoundrel VALUES (11, 1);
-INSERT INTO Scoundrel VALUES (12, 5);
-
-INSERT INTO Noble VALUES (1, 0);
-INSERT INTO Noble VALUES (2, 6);
-INSERT INTO Noble VALUES (3, 0);
-INSERT INTO Noble VALUES (4, 0);
-INSERT INTO Noble VALUES (5, 0);
-INSERT INTO Noble VALUES (6, 0);
-INSERT INTO Noble VALUES (7, 0);
-INSERT INTO Noble VALUES (8, 0);
-INSERT INTO Noble VALUES (9, 0);
-INSERT INTO Noble VALUES (10, 0);
-INSERT INTO Noble VALUES (11, 0);
-INSERT INTO Noble VALUES (12, 0);
+INSERT INTO Class_Levels VALUES (1, 0, 6, 0, 0, 0);
+INSERT INTO Class_Levels VALUES (2, 0, 0, 0, 0, 6);
+INSERT INTO Class_Levels VALUES (3, 0, 0, 6, 0, 0);
+INSERT INTO Class_Levels VALUES (4, 3, 0, 0, 3, 0);
+INSERT INTO Class_Levels VALUES (5, 6, 0, 0, 0, 0);
+INSERT INTO Class_Levels VALUES (6, 1, 0, 0, 0, 0);
+INSERT INTO Class_Levels VALUES (7, 2, 0, 0, 0, 0);
+INSERT INTO Class_Levels VALUES (8, 0, 0, 4, 0, 0);
+INSERT INTO Class_Levels VALUES (9, 0, 0, 0, 3, 0);
+INSERT INTO Class_Levels VALUES (10, 0, 0, 3, 3, 0);
+INSERT INTO Class_Levels VALUES (11, 1, 0, 0, 0, 0);
+INSERT INTO Class_Levels VALUES (12, 0, 1, 5, 1, 0);
 
 INSERT INTO Force_Powers VALUES (NULL, 'Battle Strike', 'Swift', 'Self', 'Neutral', 'Gain a bonus to Attack and Damage on your next attack.', 'http://youtu.be/C-DeI3ohVbY?t=5m31s');
 INSERT INTO Force_Powers VALUES (NULL, 'Dark Rage', 'Swift', 'Self', 'Dark Side', 'Gain a bonus to Attack and Damage for the next few combat rounds.', 'http://youtu.be/_RFYoZ7H67A?t=3m9s');
