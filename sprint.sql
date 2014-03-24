@@ -5,35 +5,74 @@ GRANT ALL PRIVILEGES ON rpgChar.* to 'user'@'localhost'
 identified by 'password';
 USE rpgChar;
 
-DROP TABLE Star_Wars, DnD_3.5, Force_Powers;
+DROP TABLE Star_Wars, Force_Powers, Species, Soldier, Jedi, Scout, Scoundrel, Noble;
 CREATE TABLE Star_Wars
 (
   ID INT(3) AUTO_INCREMENT,
-  Name VARCHAR(30),
-  Species VARCHAR(15),
-  Level INT(2),
-  Class VARCHAR(15),
-  Str INT(2),
-  Dex INT(2),
-  Con INT(2),
-  Intl INT(2),
-  Wis INT(2),
-  Cha INT(2),
-  HP INT(3),
-  Ref INT(2),
-  Fort INT(2),
-  Will INT(2),
-  BAB VARCHAR(3),
-  Pri_Weapon VARCHAR(20),
-  Sec_Weapon VARCHAR(20),
-  Pri_Attack_Bonus VARCHAR(3),
-  Pri_Weapon_Dmg VARCHAR(10),
+  Name VARCHAR(30)
   PRIMARY KEY (ID)
 );
 
-CREATE TABLE DnD_3.5
+CREATE TABLE Appearance
 (
+  ID INT(3) AUTO_INCREMENT,
+  Species VARCHAR(20),
+  Gender VARCHAR(13),
+  PRIMARY KEY (ID),
+  FOREIGN KEY (ID) REFERENCES Star_Wars(ID)
+);
 
+CREATE TABLE Ability_Scores
+(
+  ID INT(3) AUTO_INCREMENT,
+  Strength INT(2),
+  Dexterity INT(2),
+  Constitution INT(2),
+  Intelligence INT(2),
+  Wisdom INT(2),
+  Charisma INT(2),
+  PRIMARY KEY(ID),
+  FOREIGN KEY(ID) REFERENCES Star_Wars(ID)
+);
+
+CREATE TABLE Soldier
+(
+  ID INT(3) AUTO_INCREMENT,
+  Level INT(2),
+  PRIMARY KEY (ID),
+  FOREIGN KEY (ID) REFERENCES Star_Wars(ID);
+);
+
+CREATE TABLE Jedi
+(
+  ID INT(3) AUTO_INCREMENT,
+  Level INT(2),
+  PRIMARY KEY (ID),
+  FOREIGN KEY (ID) REFERENCES Star_Wars(ID);
+);
+
+CREATE TABLE Scout
+(
+  ID INT(3) AUTO_INCREMENT,
+  Level INT(2),
+  PRIMARY KEY (ID),
+  FOREIGN KEY (ID) REFERENCES Star_Wars(ID);
+);
+
+CREATE TABLE Scoundrel
+(
+  ID INT(3) AUTO_INCREMENT,
+  Level INT(2),
+  PRIMARY KEY (ID),
+  FOREIGN KEY (ID) REFERENCES Star_Wars(ID);
+);
+
+CREATE TABLE Noble
+(
+  ID INT(3) AUTO_INCREMENT,
+  Level INT(2),
+  PRIMARY KEY (ID),
+  FOREIGN KEY (ID) REFERENCES Star_Wars(ID);
 );
 
 CREATE TABLE Force_Powers
@@ -48,17 +87,109 @@ CREATE TABLE Force_Powers
   PRIMARY KEY (ID)
 );
 
-INSERT INTO Star_Wars VALUES (NULL, 'Osmando', 'Human', 6, 'Soldier', 14, 16, 12, 17, 8, 14, 70, 20, 20, 16, '+6', 'Heavy Blaster Pistol', 'Vibroblade', '+9', '3d8+3');
-INSERT INTO Star_Wars VALUES (NULL, 'Artemis', 'Human', 6, 'Jedi', 14, 12, 13, 10, 16, 16, 72, 18, 20, 18, '+6', 'Sith Lightsaber', 'Blaster Pistol', '+8', '2d8+7');
-INSERT INTO Star_Wars VALUES (NULL, 'Devron Lancer', 'Human', 6, 'Scout', 11, 18, 14, 12, 14, 9, 61, 18, 20, 18, '+4', 'Heavy Blaster Rifle', 'Blaster Pistol', '+9', '3d12+3');
-INSERT INTO Star_Wars VALUES (NULL, 'Escalus', 'Zabrak', 6, 'Scoundrel', 10, 16, 13, 16, 11, 12, 43, 23, 19, 19, '+4', 'Hold-Out Blaster', 'Vibrodagger', '+7', '3d4+3');
-INSERT INTO Star_Wars VALUES (NULL, 'Zander Barcalow', 'Human', 7, 'Noble', 11, 15, 13, 14, 18, 10, 46, 19, 17, 22, '+4', 'Grenade Launcher', 'Blaster Pistol', '+6', '4d6+3');
-INSERT INTO Star_Wars VALUES (NULL, 'Stormtrooper', 'Human', 1, 'Soldier', 11, 14, 12, 8, 10, 9, 31, 19, 16, 11, '+1', 'Blaster Rifle', 'Blaster Pistol', '+3', '3d8');
-INSERT INTO Star_Wars VALUES (NULL, 'Clone Trooper', 'Human', 2, 'Soldier', 12, 14, 15, 10, 11, 9, 39, 19, 18, 12, '+2', 'Blaster Rifle', 'Blaster Pistol', '+4', '3d8+1');
-INSERT INTO Star_Wars VALUES (NULL, 'Curuni', 'Twilek', 4, 'Scoundrel', 10, 18, 11, 15, 11, 14, 36, 21, 16, 15, '+3', 'Blaster Pistol', 'Blaster Pistol', '+7', '3d6+2');
-INSERT INTO Star_Wars VALUES (NULL, 'Neeldo', 'Rodian', 3, 'Scout', 13, 15, 12, 8, 14, 10, 38, 19, 17, 15, '+2', 'Blaster Rifle', 'Blaster Pistol', '+2', '3d8+1');
-INSERT INTO Star_Wars VALUES (NULL, 'Llleland', 'Wookie', 6, 'Scoundrel', 20, 14, 20, 17, 8, 6, 67, 19, 22, 16, '+4', 'Vibroaxe', 'Bowcaster', '+9', '2d10+12');
-INSERT INTO Star_Wars VALUES (NULL, 'Mandalorian Hunter', 1, 'Soldier', 13, 12, 11, 8, 10, 9, 30, 17, 15, 11, '+1', 'Flamethrower', 'Blaster Pistol', '+2', '3d6');
+INSERT INTO Star_Wars VALUES (1, 'Artemis');
+INSERT INTO Star_Wars VALUES (2, 'Zander Barcalow');
+INSERT INTO Star_Wars VALUES (3, 'Escalus');
+INSERT INTO Star_Wars VALUES (4, 'Devron Lancer');
+INSERT INTO Star_Wars VALUES (5, 'Osmando');
+INSERT INTO Star_Wars VALUES (6, 'Stormtrooper');
+INSERT INTO Star_Wars VALUES (7, 'Clone Trooper');
+INSERT INTO Star_Wars VALUES (8, 'Curuni');
+INSERT INTO Star_Wars VALUES (9, 'Neeldo');
+INSERT INTO Star_Wars VALUES (10, 'Llleland');
+INSERT INTO Star_Wars VALUES (11, 'Mandalorian Hunter');
+INSERT INTO Star_Wars VALUES (12, 'Sanya');
+
+INSERT INTO Appearance VALUES (1, 'Human', 'Male');
+INSERT INTO Appearance VALUES (2, 'Human', 'Male');
+INSERT INTO Appearance VALUES (3, 'Zabrak', 'Male');
+INSERT INTO Appearance VALUES (4, 'Human', 'Male');
+INSERT INTO Appearance VALUES (5, 'Human', 'Male');
+INSERT INTO Appearance VALUES (6, 'Human', 'Male');
+INSERT INTO Appearance VALUES (7, 'Human', 'Male');
+INSERT INTO Appearance VALUES (8, 'Twilek', 'Female');
+INSERT INTO Appearance VALUES (9, 'Rodian', 'Male');
+INSERT INTO Appearance VALUES (10, 'Wookiee', 'Male');
+INSERT INTO Appearance VALUES (11, 'Human', 'Male');
+INSERT INTO Appearance VALUES (12, 'Mirialan', 'Female');
+
+INSERT INTO Ability_Scores VALUES (1, 14, 12, 13, 10, 16, 16);
+INSERT INTO Ability_Scores VALUES (2, 11, 15, 13, 14, 18, 10);
+INSERT INTO Ability_Scores VALUES (3, 10, 16, 13, 16, 11, 12);
+INSERT INTO Ability_Scores VALUES (4, 11, 18, 14, 12, 14, 9);
+INSERT INTO Ability_Scores VALUES (5, 14, 16, 12, 17, 8, 14);
+INSERT INTO Ability_Scores VALUES (6, 11, 14 ,12, 8, 10, 9);
+INSERT INTO Ability_Scores VALUES (7, 12, 14, 15, 10, 11, 9);
+INSERT INTO Ability_Scores VALUES (8, 10, 18, 11, 15, 11, 14);
+INSERT INTO Ability_Scores VALUES (9, 13, 15, 12, 8, 14, 10);
+INSERT INTO Ability_Scores VALUES (10, 20, 14, 20, 17, 8, 6);
+INSERT INTO Ability_Scores VALUES (11, 13, 12, 11, 8, 10, 9);
+INSERT INTO Ability_Scores VALUES (12, 11, 16, 9, 18, 14, 16);
+
+INSERT INTO Soldier VALUES (1, 0);
+INSERT INTO Soldier VALUES (2, 0);
+INSERT INTO Soldier VALUES (3, 0);
+INSERT INTO Soldier VALUES (4, 3);
+INSERT INTO Soldier VALUES (5, 6);
+INSERT INTO Soldier VALUES (6, 1);
+INSERT INTO Soldier VALUES (7, 2);
+INSERT INTO Soldier VALUES (8, 0);
+INSERT INTO Soldier VALUES (9, 0);
+INSERT INTO Soldier VALUES (10, 0);
+INSERT INTO Soldier VALUES (11, 1);
+INSERT INTO Soldier VALUES (12, 0);
+
+INSERT INTO Jedi VALUES (1, 6);
+INSERT INTO Jedi VALUES (2, 0);
+INSERT INTO Jedi VALUES (3, 0);
+INSERT INTO Jedi VALUES (4, 0);
+INSERT INTO Jedi VALUES (5, 0);
+INSERT INTO Jedi VALUES (6, 0);
+INSERT INTO Jedi VALUES (7, 0);
+INSERT INTO Jedi VALUES (8, 0);
+INSERT INTO Jedi VALUES (9, 0);
+INSERT INTO Jedi VALUES (10, 0);
+INSERT INTO Jedi VALUES (11, 0);
+INSERT INTO Jedi VALUES (12, 1);
+
+INSERT INTO Scout VALUES (1, 0);
+INSERT INTO Scout VALUES (2, 0);
+INSERT INTO Scout VALUES (3, 0);
+INSERT INTO Scout VALUES (4, 3);
+INSERT INTO Scout VALUES (5, 0);
+INSERT INTO Scout VALUES (6, 0);
+INSERT INTO Scout VALUES (7, 0);
+INSERT INTO Scout VALUES (8, 0);
+INSERT INTO Scout VALUES (9, 3);
+INSERT INTO Scout VALUES (10, 3);
+INSERT INTO Scout VALUES (11, 0);
+INSERT INTO Scout VALUES (12, 1);
+
+INSERT INTO Scoundrel VALUES (1, 0);
+INSERT INTO Scoundrel VALUES (2, 0);
+INSERT INTO Scoundrel VALUES (3, 6);
+INSERT INTO Scoundrel VALUES (4, 0);
+INSERT INTO Scoundrel VALUES (5, 0);
+INSERT INTO Scoundrel VALUES (6, 0);
+INSERT INTO Scoundrel VALUES (7, 0);
+INSERT INTO Scoundrel VALUES (8, 4);
+INSERT INTO Scoundrel VALUES (9, 0);
+INSERT INTO Scoundrel VALUES (10, 3);
+INSERT INTO Scoundrel VALUES (11, 1);
+INSERT INTO Scoundrel VALUES (12, 5);
+
+INSERT INTO Noble VALUES (1, 0);
+INSERT INTO Noble VALUES (2, 6);
+INSERT INTO Noble VALUES (3, 0);
+INSERT INTO Noble VALUES (4, 0);
+INSERT INTO Noble VALUES (5, 0);
+INSERT INTO Noble VALUES (6, 0);
+INSERT INTO Noble VALUES (7, 0);
+INSERT INTO Noble VALUES (8, 0);
+INSERT INTO Noble VALUES (9, 0);
+INSERT INTO Noble VALUES (10, 0);
+INSERT INTO Noble VALUES (11, 0);
+INSERT INTO Noble VALUES (12, 0);
 
 INSERT INTO Force_Powers VALUES (NULL, 'Battle Strike', 'Swift', 'Self', 'Neutral', 'Gain a bonus to Attack and Damage on your next attack.', 'http://youtu.be/C-DeI3ohVbY?t=5m31s');
 INSERT INTO Force_Powers VALUES (NULL, 'Dark Rage', 'Swift', 'Self', 'Dark Side', 'Gain a bonus to Attack and Damage for the next few combat rounds.', 'http://youtu.be/_RFYoZ7H67A?t=3m9s');
