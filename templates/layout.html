@@ -1,0 +1,70 @@
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+Released absolutely free to use anywhere, all I ask is that you kindly leave the link back at the bottom.
+
+Name       : A Subtle Beige
+Description: Two column (w/ one micro column for links)
+Version    : 1.0
+Released   : 20081008
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>RPG CHARACTERS</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/asubtlebeige.css') }}" />
+<style type="text/css">
+<!--
+body {
+	background-color: #000000;
+}
+-->
+</style></head>
+<body>
+<div id="page"> 
+    <div id="header">
+    	<div class="title">RPG CHARACTERS</div>    
+    </div>
+    <div id="bar">
+      <div class="menuLink"><a href="/">Home</a></div>
+      <div class="menuLink"><a href="/starwars">Star Wars</a></div>
+      <div class="menuLink"><a href="/page">Dungeons and Dragons 3.5</a></div>
+      <div class="menuLink"><a href="/something">Force Powers</a></div>
+      <div class="menuLink"><a href="/team">Team</a></div>
+    </div>
+    <div id="pageContent">
+      <div class="articleContent">
+      
+      <div class="sidebar">
+        <h2>Links</h2>
+        <ul>
+          <li><a href="http://www.starwarsrpgindex.com/">Star Wars RPG Index</a></li>
+          <li><a href="http://www.d20srd.org/">DnD 3.5 Hypertext Index</a></li>
+        </ul>
+        <h2>Search</h2>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter keywords....." />
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="{{ url_for('static', filename='img/search.png') }}" alt="Search" title="Search" />
+          </p>
+        </form>
+        </div>
+        
+      </div>
+
+
+    </div>
+  
+    <div id="content">
+         {%block content %}{% endblock %}
+      </div>
+
+</div>
+    <div id="footer"><a href="http://www.aszx.net">web development</a>
+      by <a href="http://www.bryantsmith.com">bryant smith</a></div>
+        
+</body>
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML>
 <html>
 
@@ -23,10 +24,10 @@
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li class="selected"><a href="/index">Home</a></li>
-          <li><a href="/examples">Examples</a></li>
+          <li><a href="/login">Login</a></li>
           <li><a href="/page">A Page</a></li>
           <li><a href="/another_page">Another Page</a></li>
-          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/logout">{{session['logged_in']}} - Logout</a></li>
         </ul>
       </div>
     </div>
@@ -80,3 +81,23 @@
   </div>
 </body>
 </html>
+=======
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Home</h1>
+  <div>
+   <p>Welcome to the RPG Characters database. This (as of right now, pathetically) simple website keeps a list of premade characters for various pen and paper RPGs such as the classic Dungeons and Dragons 3.5 and the Star Wars Saga Edition Role Playing Game.</p><br />
+    <p>Currently, the website needs to be greatly renovated, and its tables could use more entries, not to mention that it needs more tables. </p><br />
+  </div>
+
+ 
+  <img src="{{ url_for('static', filename='img/background.png') }}" />					
+        
+   <p>You may use this template on any site, anywhere, for free just please leave the link back to me in the footer.   
+      This template validates XHTML Strict 1.0, CSS Validates as well; enjoy :) </p><br />       
+
+       
+
+{% endblock %}
+>>>>>>> 6a7ec83fb758ec79380d920f5223e0e82bca726b

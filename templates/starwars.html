@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Star Wars</h1>
+<table>
+  <tr><th>ID</th><th>Name</th><th>Species</th><th>Level</th><th>Class</th><th>Strength</th><th>Dexterity</th><th>Constitution</th>
+    <th>Intelligence</th><th>Wisdom</th><th>Charisma</th><th>Hitpoints</th><th>Reflex</th><th>Fortitude</th><th>Will</th>
+    <th>Base Attack</th><th>Primary Weapon</th><th>Secondary Weapon</th><th>Primary Attack</th><th>Primary Damage</th></tr>
+  {% for entry in Star_Wars %}
+  <tr><td>{{entry['ID']}}</td><td>{{entry['Name']}}</td><td>{{entry['Species']}}</td><td>{{entry['Level']}}</td><td>{{entry['Class']}}</td>
+    <td>{{entry['Str']}}</td><td>{{entry['Dex']}}</td><td>{{entry['Con']}}</td><td>{{entry['Intl']}}</td>
+    <td>{{entry['Wis']}}</td><td>{{entry['Cha']}}</td><td>{{entry['HP']}}</td><td>{{entry['Ref']}}</td><td>{{entry['Fort']}}</td>
+    <td>{{entry['Will']}}</td><td>{{entry['BAB']}}</td><td>{{entry['Pri_Weapon']}}</td><td>{{entry['Sec_Weapon']}}</td>
+    <td>{{entry['Pri_Attack_Bonus']}}</td><td>{{entry['Pri_Weapon_Dmg']}}</td></tr>
+  {% endfor %}
+</table>
+
+<p><img src="{{ url_for('static', filename='img/background.png') }}" />					
+        
+    <p>You may use this template on any site, anywhere, for free just please leave the link back to me in the footer.   
+      This template validates XHTML Strict 1.0, CSS Validates as well; enjoy :) </p><br />       
+
+       
+
+{% endblock %}
+
