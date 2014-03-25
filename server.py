@@ -10,6 +10,7 @@ def mainIndex():
   cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
   queryType = 'None'
   rows = []
+  rows2 = []
 	
   if request.method == 'POST':
     searchTerm = MySQLdb.escape_string(request.form['search'])
@@ -30,13 +31,15 @@ def starWars():
   query = "SELECT * FROM Star_Wars JOIN Appearance JOIN Ability_Scores ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = Ability_Scores.ID"
   cur.execute(query)
   rows = cur.fetchall()
+  queryType = 'None'
+  rows2 = []
   if request.method == 'POST':
     searchTerm = MySQLdb.escape_string(request.form['search'])
-    query = "SELECT * FROM Star_Wars JOIN Appearance JOIN Ability_Scores ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = Ability_Scores.ID WHERE Star_Wars.Name LIKE '" + searchTerm + "%'"
+    query2 = "SELECT * FROM Star_Wars JOIN Appearance JOIN Ability_Scores ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = Ability_Scores.ID WHERE Star_Wars.Name LIKE '" + searchTerm + "%'"
     queryType = 'yes'
-    cur.execute(query)
+    cur.execute(query2)
     rows2 = cur.fetchall()
-  return render_template('starwars.html', Star_Wars=rows, results=row2, selectedMenu='Star Wars')
+  return render_template('starwars.html', Star_Wars=rows, results=rows2, selectedMenu='Star Wars', queryType=queryType)
   
 @app.route('/team')
 def contact():
@@ -49,14 +52,16 @@ def forcePowers():
   query = 'SELECT * from Force_Powers'
   cur.execute(query)
   rows = cur.fetchall()
+  queryType = 'None'
+  rows2 = []
   if request.method == 'POST':
     searchTerm = MySQLdb.escape_string(request.form['search'])
-    query = "SELECT * FROM Force_Powers WHERE Name LIKE '" + searchTerm + "%'"
+    query2 = "SELECT * FROM Force_Powers WHERE Name LIKE '" + searchTerm + "%'"
     queryType = 'yes'
-    print (query)
+    print (query2)
     cur.execute(query)
     rows2 = cur.fetchall()
-  return render_template('something.html', Force_Powers=rows, results=rows2, selectedMenu='Force Powers')
+  return render_template('something.html', Force_Powers=rows, results=rows2, selectedMenu='Force Powers', queryType=queryType)
   
 @app.route('/page')
 def page():

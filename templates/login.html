@@ -1,33 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<title>RPG CHARACTERS</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/asubtlebeige.css') }}" />
-<style type="text/css">
-<!--
-body {
-	background-color: #000000;
-}
--->
-</style></head>
-<body>
-<div id="page"> 
-    <div id="header">
-    	<div class="title">RPG CHARACTERS</div>    
-    </div>
+{% extends "layout.html" %}
+
+{% block content %}
     <h1>Login</h1><br/>
     <form method="post" action="/login">
     <p>Please login below</p><br/>
-    <input name="username" type="text" id="username" placeholder="Username" maxlength="96"/><br/>
-    <input name="passwd" type="password" id="password" placeholder="Password" maxlength="64"/><br/><br/>
+      <p>Username: <input name="username" type="text" id="username" placeholder="Username" maxlength="96"/></p><br/>
+      <p>Password: <input name="passwd" type="password" id="password" placeholder="Password" maxlength="64"/></p><br/><br/>
     <input type="submit" name="sumbit" value="Sign In" />
    
     
-  </form>
-</div>
-
-
-        
-</body>
-</html>
+{% endblock %}
