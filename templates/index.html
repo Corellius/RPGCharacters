@@ -13,11 +13,13 @@
   <p>An advance search option will be available in the future</p>
   {% if queryType=='yes' %}
     <table>
-      <tr><th>Name</th><th>Species</th><th>Gender</th><th>Strength</th><th>Dexterity</th><th>Con</th><th>Intelligence</th>
-        <th>Wisdom</th><th>Charisma</th></tr>
+      <tr><th>Name</th><th>Species</th><th>Gender</th><th>Soldier</th><th>Jedi</th><th>Scoundrel</th><th>Scout</th><th>Noble</th>
+        <th>Strength</th><th>Dexterity</th><th>Con</th><th>Intelligence</th><th>Wisdom</th><th>Charisma</th></tr>
       {% for result in results %}
-      <tr><td>{{result['Name']}}</td><td>{{result['Species']}}</td><td>{{result['Gender']}}</td><td>{{result['Str']}}</td>
-        <td>{{result['Dex']}}</td><td>{{result['Con']}}</td><td>{{result['Intl']}}</td><td>{{result['Wis']}}</td><td>{{result['Cha']}}</td></tr>
+      <tr><td>{{result['Name']}}</td><td>{{result['Species']}}</td><td>{{result['Gender']}}</td><td>{{result['Soldier']}}</td>
+      <td>{{result['Jedi']}}</td><td>{{result['Scoundrel']}}</td><td>{{result['Scout']}}</td><td>{{result['Noble']}}</td>
+        <td>{{result['Str']}}</td><td>{{result['Dex']}}</td><td>{{result['Con']}}</td><td>{{result['Intl']}}</td>
+        <td>{{result['Wis']}}</td><td>{{result['Cha']}}</td></tr>
       {% endfor %}
     
     </table>

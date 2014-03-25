@@ -11,17 +11,18 @@
   <p>An advance search option will be available in the future</p>
   {% if queryType=='yes' %}
     <table>
-      <tr><th>Name</th><th>Action</th><th>Target</th><th>Alignment</th><th>Description</th><th>Link</th></tr>
+      <tr><th>ID</th><th>Name</th><th>Action</th><th>Target</th><th>Alignment</th><th>Description</th><th>Link</th></tr>
       {% for result in results %}
-      <tr><td>{{result['Name']}}</td><td>{{result['Action']}}</td><td>{{result['Target']}}</td>
+      <tr><td>{{result['ID']}}</td><td>{{result['Name']}}</td><td>{{result['Action']}}</td><td>{{result['Target']}}</td>
         <td>{{result['Alignment']}}</td><td>{{result['Description']}}</td><td><a href="{{result['Example_Link']}}">{{result['Example_Link']}}</td></tr>
       {% endfor %}
     
     </table>
+<br><br>
   {% endif %}
 
 <table>
-  <tr><th>ID</th><th>Name</th><th>Action Required</th><th>Target</th><th>Alignment</th><th>Description</th><th>Example</th></tr>
+  <tr><th>ID</th><th>Name</th><th>Action Required</th><th>Target</th><th>Alignment</th><th>Description</th><th>Link</th></tr>
   {% for entry in Force_Powers %}
   <tr><td>{{entry['ID']}}</td><td>{{entry['Name']}}</td><td>{{entry['Action']}}</td><td>{{entry['Target']}}</td><td>{{entry['Alignment']}}</td>
   <td>{{entry['Description']}}</td><td><a href="{{entry['Example_Link']}}">{{entry['Example_Link']}}</a></td></tr>

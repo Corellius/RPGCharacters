@@ -12,25 +12,29 @@
   <p>An advance search option will be available in the future</p>
   {% if queryType=='yes' %}
     <table>
-      <tr><th>Name</th><th>Species</th><th>Gender</th><th>Strength</th><th>Dexterity</th><th>Con</th><th>Intelligence</th>
-        <th>Wisdom</th><th>Charisma</th></tr>
+      <tr><th>Name</th><th>Species</th><th>Gender</th><th>Soldier</th><th>Jedi</th><th>Scoundrel</th><th>Scout</th><th>Noble</th>
+        <th>Strength</th><th>Dexterity</th><th>Con</th><th>Intelligence</th><th>Wisdom</th><th>Charisma</th></tr>
       {% for result in results %}
-      <tr><td>{{result['Name']}}</td><td>{{result['Species']}}</td><td>{{result['Gender']}}</td><td>{{result['Str']}}</td>
-        <td>{{result['Dex']}}</td><td>{{result['Con']}}</td><td>{{result['Intl']}}</td><td>{{result['Wis']}}</td><td>{{result['Cha']}}</td></tr>
+      <tr><td>{{result['Name']}}</td><td>{{result['Species']}}</td><td>{{result['Gender']}}</td><td>{{result['Soldier']}}</td>
+      <td>{{result['Jedi']}}</td><td>{{result['Scoundrel']}}</td><td>{{result['Scout']}}</td><td>{{result['Noble']}}</td>
+        <td>{{result['Str']}}</td><td>{{result['Dex']}}</td><td>{{result['Con']}}</td><td>{{result['Intl']}}</td>
+        <td>{{result['Wis']}}</td><td>{{result['Cha']}}</td></tr>
       {% endfor %}
     
     </table>
+<br><br>
   {% endif %}
 <table>
-  <tr><th>ID</th><th>Name</th><th>Species</th><th>Level</th><th>Class</th><th>Strength</th><th>Dexterity</th><th>Constitution</th>
-    <th>Intelligence</th><th>Wisdom</th><th>Charisma</th><th>Hitpoints</th><th>Reflex</th><th>Fortitude</th><th>Will</th>
-    <th>Base Attack</th><th>Primary Weapon</th><th>Secondary Weapon</th><th>Primary Attack</th><th>Primary Damage</th></tr>
-  {% for entry in Star_Wars %}
-  <tr><td>{{entry['ID']}}</td><td>{{entry['Name']}}</td><td>{{entry['Species']}}</td><td>{{entry['Level']}}</td><td>{{entry['Class']}}</td>
-    <td>{{entry['Str']}}</td><td>{{entry['Dex']}}</td><td>{{entry['Con']}}</td><td>{{entry['Intl']}}</td>
-    <td>{{entry['Wis']}}</td><td>{{entry['Cha']}}</td>></tr>
-  {% endfor %}
-</table>
+      <tr><th>Name</th><th>Species</th><th>Gender</th><th>Soldier</th><th>Jedi</th><th>Scoundrel</th><th>Scout</th><th>Noble</th>
+        <th>Strength</th><th>Dexterity</th><th>Con</th><th>Intelligence</th><th>Wisdom</th><th>Charisma</th></tr>
+      {% for entry in Star_Wars %}
+  <tr><td>{{entry['Name']}}</td><td>{{entry['Species']}}</td><td>{{entry['Gender']}}</td><td>{{entry['Soldier']}}</td>
+    <td>{{entry['Jedi']}}</td><td>{{entry['Scoundrel']}}</td><td>{{entry['Scout']}}</td><td>{{entry['Noble']}}</td><td>{{entry['Str']}}</td>
+    <td>{{entry['Dex']}}</td><td>{{entry['Con']}}</td><td>{{entry['Intl']}}</td><td>{{entry['Wis']}}</td>
+    <td>{{entry['Cha']}}</td></tr>
+      {% endfor %}
+    
+    </table>
 
 <p><img src="{{ url_for('static', filename='img/background.png') }}" />					
         

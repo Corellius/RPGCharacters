@@ -14,7 +14,7 @@ def mainIndex():
 	
   if request.method == 'POST':
     searchTerm = MySQLdb.escape_string(request.form['search'])
-    query = "SELECT * FROM Star_Wars JOIN Appearance JOIN Ability_Scores ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = Ability_Scores.ID WHERE Star_Wars.Name LIKE '" + searchTerm + "%'"
+    query = "SELECT * FROM Star_Wars JOIN Appearance JOIN Ability_Scores JOIN Class_Levels ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = Ability_Scores.ID AND Star_Wars.ID = Class_Levels.ID WHERE Star_Wars.Name LIKE '" + searchTerm + "%'"
     query2 = "SELECT * FROM Force_Powers WHERE Name LIKE '" + searchTerm + "%'"
     queryType = 'yes'
     print (query)
@@ -28,14 +28,14 @@ def mainIndex():
 def starWars():
   db = utils.db_connect()
   cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-  query = "SELECT * FROM Star_Wars JOIN Appearance JOIN Ability_Scores ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = Ability_Scores.ID"
+  query = "SELECT * FROM Star_Wars JOIN Appearance JOIN Ability_Scores JOIN Class_Levels ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = Ability_Scores.ID AND Star_Wars.ID = Class_Levels.ID"
   cur.execute(query)
   rows = cur.fetchall()
   queryType = 'None'
   rows2 = []
   if request.method == 'POST':
     searchTerm = MySQLdb.escape_string(request.form['search'])
-    query2 = "SELECT * FROM Star_Wars JOIN Appearance JOIN Ability_Scores ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = Ability_Scores.ID WHERE Star_Wars.Name LIKE '" + searchTerm + "%'"
+    query2 = "SELECT * FROM Star_Wars JOIN Appearance JOIN Ability_Scores JOIN Class_Levels ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = Ability_Scores.ID AND Star_Wars.ID = Class_Levels.ID WHERE Star_Wars.Name LIKE '" + searchTerm + "%'"
     queryType = 'yes'
     cur.execute(query2)
     rows2 = cur.fetchall()
@@ -59,7 +59,7 @@ def forcePowers():
     query2 = "SELECT * FROM Force_Powers WHERE Name LIKE '" + searchTerm + "%'"
     queryType = 'yes'
     print (query2)
-    cur.execute(query)
+    cur.execute(query2)
     rows2 = cur.fetchall()
   return render_template('something.html', Force_Powers=rows, results=rows2, selectedMenu='Force Powers', queryType=queryType)
   
