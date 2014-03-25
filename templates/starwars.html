@@ -2,6 +2,25 @@
 
 {% block content %}
 <h1>Star Wars</h1>
+<br></br>
+<p>To look up a character's profile, type in their name in the Search bar.</p><br></br>
+  <form method="post" action="/">
+    <label for="username">Search:</label>
+    <input type="text" id="search" name="search" size="40" />
+    <input type="submit" value="Search" name="submit" />
+  </form>
+  <p>An advance search option will be available in the future</p>
+  {% if queryType=='yes' %}
+    <table>
+      <tr><th>Name</th><th>Species</th><th>Gender</th><th>Strength</th><th>Dexterity</th><th>Con</th><th>Intelligence</th>
+        <th>Wisdom</th><th>Charisma</th></tr>
+      {% for result in results %}
+      <tr><td>{{result['Name']}}</td><td>{{result['Species']}}</td><td>{{result['Gender']}}</td><td>{{result['Str']}}</td>
+        <td>{{result['Dex']}}</td><td>{{result['Con']}}</td><td>{{result['Intl']}}</td><td>{{result['Wis']}}</td><td>{{result['Cha']}}</td></tr>
+      {% endfor %}
+    
+    </table>
+  {% endif %}
 <table>
   <tr><th>ID</th><th>Name</th><th>Species</th><th>Level</th><th>Class</th><th>Strength</th><th>Dexterity</th><th>Constitution</th>
     <th>Intelligence</th><th>Wisdom</th><th>Charisma</th><th>Hitpoints</th><th>Reflex</th><th>Fortitude</th><th>Will</th>
@@ -9,9 +28,7 @@
   {% for entry in Star_Wars %}
   <tr><td>{{entry['ID']}}</td><td>{{entry['Name']}}</td><td>{{entry['Species']}}</td><td>{{entry['Level']}}</td><td>{{entry['Class']}}</td>
     <td>{{entry['Str']}}</td><td>{{entry['Dex']}}</td><td>{{entry['Con']}}</td><td>{{entry['Intl']}}</td>
-    <td>{{entry['Wis']}}</td><td>{{entry['Cha']}}</td><td>{{entry['HP']}}</td><td>{{entry['Ref']}}</td><td>{{entry['Fort']}}</td>
-    <td>{{entry['Will']}}</td><td>{{entry['BAB']}}</td><td>{{entry['Pri_Weapon']}}</td><td>{{entry['Sec_Weapon']}}</td>
-    <td>{{entry['Pri_Attack_Bonus']}}</td><td>{{entry['Pri_Weapon_Dmg']}}</td></tr>
+    <td>{{entry['Wis']}}</td><td>{{entry['Cha']}}</td>></tr>
   {% endfor %}
 </table>
 
