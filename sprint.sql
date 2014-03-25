@@ -79,6 +79,11 @@ INSERT INTO Star_Wars VALUES (9, 'Neeldo');
 INSERT INTO Star_Wars VALUES (10, 'Llleland');
 INSERT INTO Star_Wars VALUES (11, 'Mandalorian Hunter');
 INSERT INTO Star_Wars VALUES (12, 'Sanya');
+INSERT INTO Star_Wars VALUES (13, 'Corellius');
+INSERT INTO Star_Wars VALUES (14, 'Bombax');
+INSERT INTO Star_Wars VALUES (15, 'Kallia');
+INSERT INTO Star_Wars VALUES (16, 'Livia');
+INSERT INTO Star_Wars VALUES (17, 'Arca');
 
 INSERT INTO Appearance VALUES (1, 'Human', 'Male');
 INSERT INTO Appearance VALUES (2, 'Human', 'Male');
@@ -92,6 +97,11 @@ INSERT INTO Appearance VALUES (9, 'Rodian', 'Male');
 INSERT INTO Appearance VALUES (10, 'Wookiee', 'Male');
 INSERT INTO Appearance VALUES (11, 'Human', 'Male');
 INSERT INTO Appearance VALUES (12, 'Mirialan', 'Female');
+INSERT INTO Appearance VALUES (13, 'Human', 'Male');
+INSERT INTO Appearance VALUES (14, 'Human', 'Male');
+INSERT INTO Appearance VALUES (15, 'Mirialan', 'Female');
+INSERT INTO Appearance VALUES (16, 'Human', 'Female');
+INSERT INTO Appearance VALUES (17, 'Togruta', 'Female');
 
 INSERT INTO Ability_Scores VALUES (1, 14, 12, 13, 10, 16, 16);
 INSERT INTO Ability_Scores VALUES (2, 11, 15, 13, 14, 18, 10);
@@ -105,6 +115,11 @@ INSERT INTO Ability_Scores VALUES (9, 13, 15, 12, 8, 14, 10);
 INSERT INTO Ability_Scores VALUES (10, 20, 14, 20, 17, 8, 6);
 INSERT INTO Ability_Scores VALUES (11, 13, 12, 11, 8, 10, 9);
 INSERT INTO Ability_Scores VALUES (12, 11, 16, 9, 18, 14, 16);
+INSERT INTO Ability_Scores VALUES (13, 15, 15, 17, 14, 8, 11);
+INSERT INTO Ability_Scores VALUES (14, 18, 13, 19, 11, 15, 9);
+INSERT INTO Ability_Scores VALUES (15, 13, 19, 12, 16, 10, 14);
+INSERT INTO Ability_Scores VALUES (16, 14, 16, 13, 12, 10, 10);
+INSERT INTO Ability_Scores VALUES (17, 9, 10, 11, 12, 19, 18);
 
 INSERT INTO Class_Levels VALUES (1, 0, 6, 0, 0, 0);
 INSERT INTO Class_Levels VALUES (2, 0, 0, 0, 0, 6);
@@ -118,6 +133,11 @@ INSERT INTO Class_Levels VALUES (9, 0, 0, 0, 3, 0);
 INSERT INTO Class_Levels VALUES (10, 0, 0, 3, 3, 0);
 INSERT INTO Class_Levels VALUES (11, 1, 0, 0, 0, 0);
 INSERT INTO Class_Levels VALUES (12, 0, 1, 5, 1, 0);
+INSERT INTO Class_Levels VALUES (13, 3, 5, 2, 3, 0);
+INSERT INTO Class_Levels VALUES (14, 12, 0, 0, 3, 1);
+INSERT INTO Class_Levels VALUES (15, 0, 14, 0, 0, 0);
+INSERT INTO Class_Levels VALUES (16, 10, 0, 0, 0, 3);
+INSERT INTO Class_Levels VALUES (17, 0, 0, 0, 0, 10);
 
 INSERT INTO Force_Powers VALUES (NULL, 'Battle Strike', 'Swift', 'Self', 'Neutral', 'Gain a bonus to Attack and Damage on your next attack.', 'http://youtu.be/C-DeI3ohVbY?t=5m31s');
 INSERT INTO Force_Powers VALUES (NULL, 'Dark Rage', 'Swift', 'Self', 'Dark Side', 'Gain a bonus to Attack and Damage for the next few combat rounds.', 'http://youtu.be/_RFYoZ7H67A?t=3m9s');
