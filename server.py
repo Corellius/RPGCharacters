@@ -72,15 +72,14 @@ def login():
     db = utils.db_connect()
     cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
     if request.method == 'POST':
-      username = request.form['username']
-      session['logged_in'] = username
+      username = MySQLdb.escape_string(request.form['username'])
       passwd = request.form['passwd']
       query = "select * from users WHERE username = '%s' AND password = SHA2('%s', 224)" % (username, passwd) 
       cur.execute(query)
       db.commit()
       
       if cur.fetchone():
-        
+        session['logged_in'] = username
         return redirect(url_for('mainIndex'))
     return render_template('login.html', selectedMenu='Login')
   
