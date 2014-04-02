@@ -28,7 +28,7 @@ def mainIndex():
 def starWars():
   db = utils.db_connect()
   cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-  query = "SELECT * FROM Star_Wars JOIN Appearance JOIN Ability_Scores JOIN Class_Levels ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = Ability_Scores.ID AND Star_Wars.ID = Class_Levels.ID"
+  query = "SELECT *, ((a.Con - 10) DIV 2)*(c.Soldier+c.Jedi+c.Scout+c.Scoundrel+c.Noble)+(c.Soldier*6)+(c.Jedi*6)+(c.Scout*5)+(c.Scoundrel*4)+(c.Noble*4) as HP, 10+(c.Jedi+c.Soldier+c.Scoundrel+c.Scout+c.Noble)+((a.Dex - 10) DIV 2) as Ref, 10+(c.Jedi+c.Soldier+c.Scoundrel+c.Scout+c.Noble)+((a.Con - 10) DIV 2) as Fort, 10+(c.Jedi+c.Soldier+c.Scoundrel+c.Scout+c.Noble)+((a.Wis - 10) DIV 2) as Will FROM Star_Wars JOIN Appearance JOIN Ability_Scores a JOIN Class_Levels c ON Star_Wars.ID = Appearance.ID AND Star_Wars.ID = a.ID AND Star_Wars.ID = c.ID"
   cur.execute(query)
   rows = cur.fetchall()
   queryType = 'None'
@@ -39,6 +39,9 @@ def starWars():
     queryType = 'yes'
     cur.execute(query2)
     rows2 = cur.fetchall()
+  #queryHP = "SELECT ((a.Con - 10) / 2)*(c.Soldier+c.Jedi+c.Scout+c.Scoundrel+c.Noble)+(c.Soldier*6)+(c.Jedi*6)+(c.Scout*5)+(c.Scoundrel*4)+(c.Noble*4) as HP FROM Ability_Scores a JOIN Class_Levels c ON Ability_Scores.ID = Class_Levels.ID"
+  #cur.execute(queryHP)
+  #rowsHP = cur.fetchall()
   return render_template('starwars.html', Star_Wars=rows, results=rows2, selectedMenu='Star Wars', queryType=queryType)
   
 @app.route('/team')

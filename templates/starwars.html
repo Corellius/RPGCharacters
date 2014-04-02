@@ -26,12 +26,13 @@
   {% endif %}
 <table>
       <tr><th>Name</th><th>Species</th><th>Gender</th><th>Soldier</th><th>Jedi</th><th>Scoundrel</th><th>Scout</th><th>Noble</th>
-        <th>Strength</th><th>Dexterity</th><th>Con</th><th>Intelligence</th><th>Wisdom</th><th>Charisma</th></tr>
+        <th>Str</th><th>Dex</th><th>Con</th><th>Int</th><th>Wis</th><th>Cha</th><th>HP</th><th>Reflex</th>
+        <th>Fortitude</th><th>Will</th></tr>
       {% for entry in Star_Wars %}
   <tr><td>{{entry['Name']}}</td><td>{{entry['Species']}}</td><td>{{entry['Gender']}}</td><td>{{entry['Soldier']}}</td>
     <td>{{entry['Jedi']}}</td><td>{{entry['Scoundrel']}}</td><td>{{entry['Scout']}}</td><td>{{entry['Noble']}}</td><td>{{entry['Str']}}</td>
     <td>{{entry['Dex']}}</td><td>{{entry['Con']}}</td><td>{{entry['Intl']}}</td><td>{{entry['Wis']}}</td>
-    <td>{{entry['Cha']}}</td></tr>
+    <td>{{entry['Cha']}}</td><td>{{entry['HP']}}</td><td>{{entry['Ref']}}</td><td>{{entry['Fort']}}</td><td>{{entry['Will']}}</td></tr>
       {% endfor %}
     
     </table>
