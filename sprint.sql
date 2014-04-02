@@ -10,7 +10,8 @@ CREATE TABLE Star_Wars
 (
   ID INT(3) AUTO_INCREMENT,
   Name VARCHAR(30),
-  PRIMARY KEY (ID)
+  PRIMARY KEY (ID),
+  INDEX (Name)
 );
 
 CREATE TABLE Appearance
