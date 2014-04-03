@@ -65,7 +65,7 @@ text-align:left;
 font-family:Georgia, "Times New Roman", Times, serif;
 font-size:50px;
 font-weight:bold;
-color: #996600;
+color: #DEBB73;
 }
 
 .subText
@@ -86,10 +86,10 @@ color:	#EEDDB9;
 text-align:center;
 padding-left:0px;
 padding-top:60px;
-color:  	 	#580000  ;
+color:  	 	#480000   ;
 font-family:Verdana, Arial, Helvetica, sans-serif;
-font-size:20px;
-font-weight:bold;
+font-size:17px;
+font-weight:Normal;
 }
 
 .articleContent
@@ -101,7 +101,7 @@ padding-bottom:10px;
 padding-left:5px;
 font-size:15px;
 font-weight:bold;
-color:#996600;
+color:#DEBB73;
 text-align:center;
 font-family:Arial, Helvetica, sans-serif;
 line-height:27px;
@@ -218,16 +218,16 @@ ul#menu li a
   height: 20px;
   padding: 6px 20px 5px 20px;
   text-align: right;
-  color: #000000;
+  color: #DEBB73;
   text-decoration: none;
-  background:  		#DEBB73;} 
+  <!background:  		#DEBB73;-->} 
 
 ul#menu li.selected a, ul#menu li.selected a:hover
-{ background:#000000;
-  color:  		#DEBB73;}
+{ background: 	#DEBB73 ;
+  color:  		#000000}
 
 ul#menu li a:hover
-{ color: #000000;}
+{ color: #DEBB73;}
 
 <!end-->
 
