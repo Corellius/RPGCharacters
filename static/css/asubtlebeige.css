@@ -51,7 +51,7 @@ ul li
   height: 100%;  
   position: relative; 
   overflow: hidden; 
-  background: #080000     url(img/star_wars_se.jpg) repeat-y;
+  background:#080000      url(img/star_wars_se.jpg) repeat-y;
   width: 700px;
 }
 
@@ -86,7 +86,7 @@ color:	#EEDDB9;
 text-align:center;
 padding-left:0px;
 padding-top:60px;
-color:  	 	#480000   ;
+color:  	 	 	#280000    ;
 font-family:Verdana, Arial, Helvetica, sans-serif;
 font-size:17px;
 font-weight:Normal;
