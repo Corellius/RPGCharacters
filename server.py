@@ -66,9 +66,41 @@ def forcePowers():
     rows2 = cur.fetchall()
   return render_template('something.html', Force_Powers=rows, results=rows2, selectedMenu='Force Powers', queryType=queryType)
   
-@app.route('/page')
+@app.route('/add')
 def page():
-    return render_template('page.html', selectedMenu='Page')
+    return render_template('page.html', selectedMenu='Add a Character')
+  
+@app.route('/confirm', methods=['POST'])
+def report2():
+  query = 'INSERT'
+  query2 = 'INSERT'
+  query3 = 'INSERT'
+  query4 = 'INSERT'
+  print query
+  print query2
+  print query3
+  print query4
+  db = utils.db_connect()
+  cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+  query = "INSERT INTO Star_Wars (Name) VALUES ('"
+  query += request.form['name'] + "')"
+  query2 = "INSERT INTO Appearance (Species, Gender) VALUES ('"
+  query2 += request.form['species'] + "', '" + request.form['gender'] + "')"
+  query3 = "INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES ("
+  query3 += request.form['str'] + ", " + request.form['dex'] + ", " + request.form['con'] + ", " + request.form['intl'] + ", " + request.form['wis'] + ", " + request.form['cha'] + ")"
+  query4 = "INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES ("
+  query4 += request.form['soldier'] + ", " + request.form['jedi'] + ", " + request.form['scoundrel'] + ", " + request.form['scout'] + ", " + request.form['noble'] + ")"
+  
+  print query
+  print query2
+  print query3
+  print query4
+  cur.execute(query);
+  cur.execute(query2);
+  cur.execute(query3);
+  cur.execute(query4);
+  db.commit()
+  return redirect(url_for('starWars'))
   
 @app.route('/login', methods=['GET', 'POST'])
 def login():

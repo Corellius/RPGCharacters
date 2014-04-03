@@ -1,88 +1,32 @@
-<<<<<<< HEAD
-<!DOCTYPE HTML>
-<html>
-
-<head>
-  <title>RPG Characters Database</title>
-  <meta name="description" content="website description" />
-  <meta name="keywords" content="website keywords, website keywords" />
-  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <link rel="stylesheet" type="text/css" href="static/style.css" />
-</head>
-
-<body>
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="/index">RPG<span class="logo_colour">Characters</span></a></h1>
-          <h2>RPG Characters Database Template</h2>
-        </div>
-      </div>
-      <div id="menubar">
-        <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li><a href="/">Home</a></li>
-          <li><a href="/login">Login</a></li>
-          <li class="selected"><a href="page">A Page</a></li>
-          <li><a href="/another_page">Another Page</a></li>
-          <li><a href="/logout">{{session['logged_in']}} - Logout</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="content_header"></div>
-    <div id="site_content">
-      <div class="sidebar">
-        <!-- insert your sidebar items here -->
-        <h3>Latest News</h3>
-        <h4>New Website Launched</h4>
-        <h5>January 1st, 2010</h5>
-        <p>2010 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href="#">Read more</a></p>
-        <p></p>
-        <h4>New Website Launched</h4>
-        <h5>January 1st, 2010</h5>
-        <p>2010 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href="#">Read more</a></p>
-        <h3>Useful Links</h3>
-        <ul>
-          <li><a href="#">link 1</a></li>
-          <li><a href="#">link 2</a></li>
-          <li><a href="#">link 3</a></li>
-          <li><a href="#">link 4</a></li>
-        </ul>
-        <h3>Search</h3>
-        <form method="post" action="#" id="search_form">
-          <p>
-            <input class="search" type="text" name="search_field" value="Enter keywords....." />
-            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="static/search.png" alt="Search" title="Search" />
-          </p>
-        </form>
-      </div>
-      <div id="content">
-        <!-- insert the page content here -->
-        <h1>A Page</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-      </div>
-    </div>
-    <div id="content_footer"></div>
-    <div id="footer">
-      <p><a href="/index">Home</a> | <a href="/examples">Examples</a> | <a href="/page">A Page</a> | <a href="/another_page">Another Page</a> | <a href="/contact">Contact Us</a></p>
-      <p>Copyright &copy; mystery team | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
-    </div>
-  </div>
-</body>
-</html>
-=======
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Dungeons and Dragons</h1>
-<p>To be added shortly.</p>
+<h1>Create a New Character</h1>
+<br>
+<form method = "post" action = "/confirm">
+					<table>
+					<tr><td>Name</td><td><input type="text" id="name" name="name" /></td></tr>
+					<tr><td>Species</td><td><input type="text" id="species" name="species" /></td></tr>
+          <tr><td>Gender</td><td><select name="gender">
+					<option>Male</option>
+					<option>Female</option>
+					</select></td></tr>
+          <tr><td>Jedi Levels</td><td><input type="number" name="jedi" min="1" max="20" step="1" value="0" size="3"/></tr>
+          <tr><td>Soldier Levels</td><td><input type="number" name="soldier" min="1" max="20" step="1" value="0" size="3"/></tr>
+          <tr><td>Scout Levels</td><td><input type="number" name="scout" min="1" max="20" step="1" value="0" size="3"/></tr>
+          <tr><td>Scoundrel Levels</td><td><input type="number" name="scoundrel" min="1" max="20" step="1" value="0" size="3"/></tr>
+          <tr><td>Noble Levels</td><td><input type="number" name="noble" min="1" max="20" step="1" value="0" size="3"/></tr>
+          <tr><td>Strength</td><td><input type="number" name="str" min="3" max="18" step="1" value="8" size="3"/></tr>
+          <tr><td>Dexterity</td><td><input type="number" name="dex" min="3" max="18" step="1" value="8" size="3"/></tr>
+          <tr><td>Constitution</td><td><input type="number" name="con" min="3" max="18" step="1" value="8" size="3"/></tr>
+          <tr><td>Intelligence</td><td><input type="number" name="intl" min="3" max="18" step="1" value="8" size="3"/></tr>
+          <tr><td>Wisdom</td><td><input type="number" name="wis" min="3" max="18" step="1" value="8" size="3"/></tr>
+          <tr><td>Charisma</td><td><input type="number" name="cha" min="3" max="18" step="1" value="8" size="3"/></tr>
+          <tr><td>&nbsp;</td><td><input type="submit" value="Confirm Character" /></td></tr>
+  </table>
+</form>
+
+            
 <p><img src="{{ url_for('static', filename='img/background.png') }}" />					
         
     <p>You may use this template on any site, anywhere, for free just please leave the link back to me in the footer.   
@@ -91,4 +35,3 @@
        
 
 {% endblock %}
->>>>>>> 6a7ec83fb758ec79380d920f5223e0e82bca726b

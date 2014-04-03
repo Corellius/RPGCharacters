@@ -8,7 +8,7 @@ USE rpgChar;
 DROP TABLE Star_Wars, Force_Powers, Appearance, Ability_Scores, Class_Levels;
 CREATE TABLE Star_Wars
 (
-  ID INT(3) AUTO_INCREMENT,
+  ID INT(3) NOT NULL AUTO_INCREMENT,
   Name VARCHAR(30),
   PRIMARY KEY (ID),
   INDEX (Name)
@@ -16,7 +16,7 @@ CREATE TABLE Star_Wars
 
 CREATE TABLE Appearance
 (
-  ID INT(3) AUTO_INCREMENT,
+  ID INT(3) NOT NULL AUTO_INCREMENT,
   Species VARCHAR(20),
   Gender VARCHAR(13),
   PRIMARY KEY (ID),
@@ -25,7 +25,7 @@ CREATE TABLE Appearance
 
 CREATE TABLE Ability_Scores
 (
-  ID INT(3) AUTO_INCREMENT,
+  ID INT(3) NOT NULL AUTO_INCREMENT,
   Str INT(2),
   Dex INT(2),
   Con INT(2),
@@ -38,7 +38,7 @@ CREATE TABLE Ability_Scores
 
 CREATE TABLE Class_Levels
 (
-  ID INT(3) AUTO_INCREMENT,
+  ID INT(3) NOT NULL AUTO_INCREMENT,
   Soldier INT(2),
   Jedi INT(2),
   Scoundrel INT(2),
@@ -50,7 +50,7 @@ CREATE TABLE Class_Levels
 
 CREATE TABLE Force_Powers
 (
-  ID INT(3) AUTO_INCREMENT,
+  ID INT(3) NOT NULL AUTO_INCREMENT,
 	Name VARCHAR(25),
 	Action VARCHAR(10),
 	Target VARCHAR(40),
@@ -68,77 +68,77 @@ CREATE TABLE users
   primary key (userId)
 );
 
-INSERT INTO Star_Wars VALUES (1, 'Artemis');
-INSERT INTO Star_Wars VALUES (2, 'Zander Barcalow');
-INSERT INTO Star_Wars VALUES (3, 'Escalus');
-INSERT INTO Star_Wars VALUES (4, 'Devron Lancer');
-INSERT INTO Star_Wars VALUES (5, 'Osmando');
-INSERT INTO Star_Wars VALUES (6, 'Stormtrooper');
-INSERT INTO Star_Wars VALUES (7, 'Clone Trooper');
-INSERT INTO Star_Wars VALUES (8, 'Curuni');
-INSERT INTO Star_Wars VALUES (9, 'Neeldo');
-INSERT INTO Star_Wars VALUES (10, 'Llleland');
-INSERT INTO Star_Wars VALUES (11, 'Mandalorian Hunter');
-INSERT INTO Star_Wars VALUES (12, 'Sanya');
-INSERT INTO Star_Wars VALUES (13, 'Corellius');
-INSERT INTO Star_Wars VALUES (14, 'Bombax');
-INSERT INTO Star_Wars VALUES (15, 'Kallia');
-INSERT INTO Star_Wars VALUES (16, 'Livia');
-INSERT INTO Star_Wars VALUES (17, 'Arca');
+INSERT INTO Star_Wars (Name) VALUES ('Artemis');
+INSERT INTO Star_Wars (Name) VALUES ('Zander Barcalow');
+INSERT INTO Star_Wars (Name) VALUES ('Escalus');
+INSERT INTO Star_Wars (Name) VALUES ('Devron Lancer');
+INSERT INTO Star_Wars (Name) VALUES ('Osmando');
+INSERT INTO Star_Wars (Name) VALUES ('Stormtrooper');
+INSERT INTO Star_Wars (Name) VALUES ('Clone Trooper');
+INSERT INTO Star_Wars (Name) VALUES ('Curuni');
+INSERT INTO Star_Wars (Name) VALUES ('Neeldo');
+INSERT INTO Star_Wars (Name) VALUES ('Llleland');
+INSERT INTO Star_Wars (Name) VALUES ('Mandalorian Hunter');
+INSERT INTO Star_Wars (Name) VALUES ('Sanya');
+INSERT INTO Star_Wars (Name) VALUES ('Corellius');
+INSERT INTO Star_Wars (Name) VALUES ('Bombax');
+INSERT INTO Star_Wars (Name) VALUES ('Kallia');
+INSERT INTO Star_Wars (Name) VALUES ('Livia');
+INSERT INTO Star_Wars (Name) VALUES ('Arca');
 
-INSERT INTO Appearance VALUES (1, 'Human', 'Male');
-INSERT INTO Appearance VALUES (2, 'Human', 'Male');
-INSERT INTO Appearance VALUES (3, 'Zabrak', 'Male');
-INSERT INTO Appearance VALUES (4, 'Human', 'Male');
-INSERT INTO Appearance VALUES (5, 'Human', 'Male');
-INSERT INTO Appearance VALUES (6, 'Human', 'Male');
-INSERT INTO Appearance VALUES (7, 'Human', 'Male');
-INSERT INTO Appearance VALUES (8, 'Twilek', 'Female');
-INSERT INTO Appearance VALUES (9, 'Rodian', 'Male');
-INSERT INTO Appearance VALUES (10, 'Wookiee', 'Male');
-INSERT INTO Appearance VALUES (11, 'Human', 'Male');
-INSERT INTO Appearance VALUES (12, 'Mirialan', 'Female');
-INSERT INTO Appearance VALUES (13, 'Human', 'Male');
-INSERT INTO Appearance VALUES (14, 'Human', 'Male');
-INSERT INTO Appearance VALUES (15, 'Mirialan', 'Female');
-INSERT INTO Appearance VALUES (16, 'Human', 'Female');
-INSERT INTO Appearance VALUES (17, 'Togruta', 'Female');
+INSERT INTO Appearance (Species, Gender) VALUES ('Human', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Human', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Zabrak', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Human', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Human', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Human', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Human', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Twilek', 'Female');
+INSERT INTO Appearance (Species, Gender) VALUES ('Rodian', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Wookiee', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Human', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Mirialan', 'Female');
+INSERT INTO Appearance (Species, Gender) VALUES ('Human', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Human', 'Male');
+INSERT INTO Appearance (Species, Gender) VALUES ('Mirialan', 'Female');
+INSERT INTO Appearance (Species, Gender) VALUES ('Human', 'Female');
+INSERT INTO Appearance (Species, Gender) VALUES ('Togruta', 'Female');
 
-INSERT INTO Ability_Scores VALUES (1, 14, 12, 13, 10, 16, 16);
-INSERT INTO Ability_Scores VALUES (2, 11, 15, 13, 14, 18, 10);
-INSERT INTO Ability_Scores VALUES (3, 10, 16, 13, 16, 11, 12);
-INSERT INTO Ability_Scores VALUES (4, 11, 18, 14, 12, 14, 9);
-INSERT INTO Ability_Scores VALUES (5, 14, 16, 12, 17, 8, 14);
-INSERT INTO Ability_Scores VALUES (6, 11, 14 ,12, 8, 10, 9);
-INSERT INTO Ability_Scores VALUES (7, 12, 14, 15, 10, 11, 9);
-INSERT INTO Ability_Scores VALUES (8, 10, 18, 11, 15, 11, 14);
-INSERT INTO Ability_Scores VALUES (9, 13, 15, 12, 8, 14, 10);
-INSERT INTO Ability_Scores VALUES (10, 20, 14, 20, 17, 8, 6);
-INSERT INTO Ability_Scores VALUES (11, 13, 12, 11, 8, 10, 9);
-INSERT INTO Ability_Scores VALUES (12, 11, 16, 9, 18, 14, 16);
-INSERT INTO Ability_Scores VALUES (13, 15, 15, 17, 14, 8, 11);
-INSERT INTO Ability_Scores VALUES (14, 18, 13, 19, 11, 15, 9);
-INSERT INTO Ability_Scores VALUES (15, 13, 19, 12, 16, 10, 14);
-INSERT INTO Ability_Scores VALUES (16, 14, 16, 13, 12, 10, 10);
-INSERT INTO Ability_Scores VALUES (17, 9, 10, 11, 12, 19, 18);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (14, 12, 13, 10, 16, 16);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (11, 15, 13, 14, 18, 10);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (10, 16, 13, 16, 11, 12);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (11, 18, 14, 12, 14, 9);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (14, 16, 12, 17, 8, 14);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (11, 14 ,12, 8, 10, 9);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (12, 14, 15, 10, 11, 9);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (10, 18, 11, 15, 11, 14);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (13, 15, 12, 8, 14, 10);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (20, 14, 20, 17, 8, 6);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (13, 12, 11, 8, 10, 9);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (11, 16, 9, 18, 14, 16);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (15, 15, 17, 14, 8, 11);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (18, 13, 19, 11, 15, 9);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (13, 19, 12, 16, 10, 14);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (14, 16, 13, 12, 10, 10);
+INSERT INTO Ability_Scores (Str, Dex, Con, Intl, Wis, Cha) VALUES (9, 10, 11, 12, 19, 18);
 
-INSERT INTO Class_Levels VALUES (1, 0, 6, 0, 0, 0);
-INSERT INTO Class_Levels VALUES (2, 0, 0, 0, 0, 6);
-INSERT INTO Class_Levels VALUES (3, 0, 0, 6, 0, 0);
-INSERT INTO Class_Levels VALUES (4, 3, 0, 0, 3, 0);
-INSERT INTO Class_Levels VALUES (5, 6, 0, 0, 0, 0);
-INSERT INTO Class_Levels VALUES (6, 1, 0, 0, 0, 0);
-INSERT INTO Class_Levels VALUES (7, 2, 0, 0, 0, 0);
-INSERT INTO Class_Levels VALUES (8, 0, 0, 4, 0, 0);
-INSERT INTO Class_Levels VALUES (9, 0, 0, 0, 3, 0);
-INSERT INTO Class_Levels VALUES (10, 0, 0, 3, 3, 0);
-INSERT INTO Class_Levels VALUES (11, 1, 0, 0, 0, 0);
-INSERT INTO Class_Levels VALUES (12, 0, 1, 5, 1, 0);
-INSERT INTO Class_Levels VALUES (13, 3, 5, 2, 3, 0);
-INSERT INTO Class_Levels VALUES (14, 12, 0, 0, 3, 1);
-INSERT INTO Class_Levels VALUES (15, 0, 14, 0, 0, 0);
-INSERT INTO Class_Levels VALUES (16, 10, 0, 0, 0, 3);
-INSERT INTO Class_Levels VALUES (17, 0, 0, 0, 0, 10);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (0, 6, 0, 0, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (0, 0, 0, 0, 6);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (0, 0, 6, 0, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (3, 0, 0, 3, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (6, 0, 0, 0, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (1, 0, 0, 0, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (2, 0, 0, 0, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (0, 0, 4, 0, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (0, 0, 0, 3, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (0, 0, 3, 3, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (1, 0, 0, 0, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (0, 1, 5, 1, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (3, 5, 2, 3, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (12, 0, 0, 3, 1);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (0, 14, 0, 0, 0);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (10, 0, 0, 0, 3);
+INSERT INTO Class_Levels (Soldier, Jedi, Scoundrel, Scout, Noble) VALUES (0, 0, 0, 0, 10);
 
 INSERT INTO Force_Powers VALUES (NULL, 'Battle Strike', 'Swift', 'Self', 'Neutral', 'Gain a bonus to Attack and Damage on your next attack.', 'http://youtu.be/C-DeI3ohVbY?t=5m31s');
 INSERT INTO Force_Powers VALUES (NULL, 'Dark Rage', 'Swift', 'Self', 'Dark Side', 'Gain a bonus to Attack and Damage for the next few combat rounds.', 'http://youtu.be/_RFYoZ7H67A?t=3m9s');
