@@ -1,15 +1,18 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Star Wars</h1>
-<br>
-<p>To look up a character's profile, type in their name in the Search bar.</p><br>
-  <form method="post" action="/starwars">
-    <label for="username">Search:</label>
-    <input type="text" id="search" name="search" size="40" />
-    <input type="submit" value="Search" name="submit" />
-  </form>
-  <p>An advance search option will be available in the future</p>
+<div class = "articleTitle">
+  <h1>STAR WARS</h1>
+</div>
+<div class = "articleContent">
+    
+    <form method="post" action="/">
+      <label for="username">Search:</label>
+      <input type="text" id="search" name="search" size="40" />
+      <input type="submit" value="Search" name="submit" />
+    </form>
+   <p>Type in character's name to search for profile</p>
+    </div>
   {% if queryType=='yes' %}
     <table>
       <tr><th>Name</th><th>Species</th><th>Gender</th><th>Soldier</th><th>Jedi</th><th>Scoundrel</th><th>Scout</th><th>Noble</th>

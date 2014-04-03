@@ -1,14 +1,18 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Force Powers</h1>
-<p>To look up a Force Power, type the name in the Search bar.</p><br></br>
-  <form method="post" action="/something">
-    <label for="username">Search:</label>
-    <input type="text" id="search" name="search" size="40" />
-    <input type="submit" value="Search" name="submit" />
-  </form>
-  <p>An advance search option will be available in the future</p>
+<div class = "articleTitle">
+  <h1>FORCE POWERS</h1>
+</div>
+ <div class = "articleContent">
+    
+    <form method="post" action="/">
+      <label for="username">Search:</label>
+      <input type="text" id="search" name="search" size="40" />
+      <input type="submit" value="Search" name="submit" />
+    </form>
+   <p>Type in character's name to search for profile</p>
+    </div>
   {% if queryType=='yes' %}
     <table>
       <tr><th>ID</th><th>Name</th><th>Action</th><th>Target</th><th>Alignment</th><th>Description</th><th>Link</th></tr>

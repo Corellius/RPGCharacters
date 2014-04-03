@@ -1,46 +1,18 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Home</h1>
-  <div>
-    <br>
-    <p>To look up a character's profile, type in their name in the Search bar.</p><br>
-    <form method="post" action="/">
-      <label for="username">Search:</label>
-      <input type="text" id="search" name="search" size="40" />
-      <input type="submit" value="Search" name="submit" />
-    </form>
-  <p>An advance search option will be available in the future</p>
-  {% if queryType=='yes' %}
-    <table>
-      <tr><th>Name</th><th>Species</th><th>Gender</th><th>Soldier</th><th>Jedi</th><th>Scoundrel</th><th>Scout</th><th>Noble</th>
-        <th>Strength</th><th>Dexterity</th><th>Con</th><th>Intelligence</th><th>Wisdom</th><th>Charisma</th></tr>
-      {% for result in results %}
-      <tr><td>{{result['Name']}}</td><td>{{result['Species']}}</td><td>{{result['Gender']}}</td><td>{{result['Soldier']}}</td>
-      <td>{{result['Jedi']}}</td><td>{{result['Scoundrel']}}</td><td>{{result['Scout']}}</td><td>{{result['Noble']}}</td>
-        <td>{{result['Str']}}</td><td>{{result['Dex']}}</td><td>{{result['Con']}}</td><td>{{result['Intl']}}</td>
-        <td>{{result['Wis']}}</td><td>{{result['Cha']}}</td></tr>
-      {% endfor %}
-    
-    </table>
-    <br><br>
-    <table>
-      <tr><th>Name</th><th>Action</th><th>Target</th><th>Alignment</th><th>Description</th><th>Link</th></tr>
-      {% for result in power %}
-      <tr><td>{{result['Name']}}</td><td>{{result['Action']}}</td><td>{{result['Target']}}</td>
-        <td>{{result['Alignment']}}</td><td>{{result['Description']}}</td><td><a href="{{result['Example_Link']}}">{{result['Example_Link']}}</td></tr>
-      {% endfor %}
-    
-    </table>
-  {% endif %}
-  </div>
+<h1>UMW Alien Abduction Research Centre </h1>
+<p>Welcome to the Alien Abduction Research Centre at the 
+  <a href="http://umw.edu">University of Mary Washington</a></p>
+  
+					
+					<img src="{{ url_for('static', filename='img/ufo_003.jpg') }}" />
+        <p>Sighting by the <strong>UMW Research Team</strong> near <strong>Area 51</strong></p>
+        <p>You can view our entire list of abductions by clicking the tab above!</p>
+        <h2>Current Advisories:</h2>
+        <ul>
+          <li>21 January 2014. <strong>Tall Whites</strong> spotted near Slaughter Canyon, NV. Use extreme caution</li>
+          <li>20 January 2014. <strong>Tall Whites</strong> spotted near Reno, NV. </li>
 
- 
-  <img src="{{ url_for('static', filename='img/background.png') }}" />					
-        
-   <p>You may use this template on any site, anywhere, for free just please leave the link back to me in the footer.   
-      This template validates XHTML Strict 1.0, CSS Validates as well; enjoy :) </p><br />       
-
-       
-
+        </ul>
 {% endblock %}

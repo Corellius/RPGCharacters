@@ -1,12 +1,15 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>Login</h1><br/>
-    <form method="post" action="/login">
-    <p>Please login below</p><br/>
+<div class = "articleTitle">
+  <h1>Log-In </h1>
+  
+  <div class = "articleContent">
+    <p>Please Login Below</p>
+     <form method="post" action="/login">
       <p>Username: <input name="username" type="text" id="username" placeholder="Username" maxlength="96"/></p><br/>
       <p>Password: <input name="passwd" type="password" id="password" placeholder="Password" maxlength="64"/></p><br/><br/>
-    <input type="submit" name="sumbit" value="Sign In" />
+       <input type="submit" name="sumbit" value="Sign In" />
    
     
 {% endblock %}

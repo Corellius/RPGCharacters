@@ -24,30 +24,41 @@ Released   : 20081008
     <div id="header">
     	<div class="title">RPG CHARACTERS</div>    
     </div>
-    <div id="bar">
-      <div class="menuLink"><a href="/">Home</a></div>
-      <div class="menuLink"><a href="/login">Login</a></div>
-      <div class="menuLink"><a href="/starwars">Star Wars</a></div>
-      <!--<div class="menuLink"><a href="/page">Dungeons and Dragons 3.5</a></div>-->
-      <div class="menuLink"><a href="/something">Force Powers</a></div>
-      <div class="menuLink"><a href="/team">Team</a></div>
-      <div class="menuLink"><a href="/logout">{{session['logged_in']}} - Logout</a></div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+           <li  {% if selectedMenu == "Home" %} class="selected" {% endif %} >
+            <a href="/">Home</a></li>
+           <li  {% if selectedMenu == "Login" %} class="selected" {% endif %} >
+            <a href="/login">Login</a></li>
+           <li  {% if selectedMenu == "Star Wars" %} class="selected" {% endif %} >
+            <a href="/starwars">Star Wars</a></li>
+           <li  {% if selectedMenu == "Force Powers" %} class="selected" {% endif %} >
+            <a href="/something">Force Powers</a></li>
+           <li  {% if selectedMenu == "Team" %} class="selected" {% endif %} >
+            <a href="/team">Team</a></li>
+           <li  {% if selectedMenu == "Logout" %} class="selected" {% endif %} >
+            <a href="/logout">{{session['logged_in']}}Logout</a></li>
+      
+     </ul>
     </div>
     <div id="pageContent">
-      <div class="articleContent">
       
-      <div class="sidebar">
-        <h2>Links</h2>
-        <ul>
+      
+      <div class = "sidebar">
+          
+         <ul>
+           <li><a>Links</a></li>
           <li><a href="http://www.starwarsrpgindex.com/">Star Wars RPG Index</a></li>
           <li><a href="http://www.d20srd.org/">DnD 3.5 Hypertext Index</a></li>
         </ul>
+      </div>
+      
+      <div class="sidebar">
+       
         </div>
         
-      </div>
-
-
-    </div>
+  </div>
   
     <div id="content">
          {%block content %}{% endblock %}
